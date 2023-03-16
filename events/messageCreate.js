@@ -15,9 +15,9 @@ module.exports = {
         if (!command) return;
     
         try {
-            command.run(message);
+            await command.run(message);
         } catch (error) {
-            console.error(error);
+            console.log(error);
             message.edit({ 
                 content:`There was an error trying to execute this command!\n${error.name}: ${error.message}`
             });
